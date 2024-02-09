@@ -1,14 +1,4 @@
-body {
-    padding: 0;
-    margin: 0;
-}
-
-h1, h2 {
-    font-family: monospace;
-}
-
 .cabecalho {
     background-color: grey;
-    margin: 0;
-    padding: 50px;
+    
 }
