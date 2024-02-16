@@ -8,7 +8,9 @@
     <!--Código para acompanhar o progresso do site-->
 
   <body>
+    <center><div></div>
       <h1>Objetivos</h1>
+      
       <ul>
         <li>
             <label class="container">Checkbox<input type="checkbox" checked="checked"><span class="checkmark"></span></label>
@@ -44,22 +46,32 @@
             <label class="container">1 Tabela com informações<input type="checkbox"><span class="checkmark"></span></label>
         </li>
         <li>
-            <label class="container">1 Fonte do Google<input type="checkbox"><span class="checkmark"></span></label>
+            <label class="container">1 Fonte do Google<input type="checkbox" checked="checked"><span class="checkmark"></span></label>
         </li>
         <li>
             <label class="container">1 Carrossel com 5 imagens<input type="checkbox"><span class="checkmark"></span></label>
         </li>
       </ul>
 
+      </div></center>
       <style>
+        body {
+            background-color: black;
+        }
+
         li {
             font-family: monospace;
-            font-size: 20px;
+            font-size: 30px;
+            list-style: inside;
         }
 
         h1 {
             font-family: monospace, italic;
-            font-size: 50px;
+            font-size: 70px;
+        }
+
+        li, h1 {
+            color: white;
         }
       </style>
   </body>
