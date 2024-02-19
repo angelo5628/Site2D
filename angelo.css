@@ -1,0 +1,263 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;  /*<- Esse height é usado para as imagens cobrirem a tela inteira, pois por padrão, o navegador define uma altura mínima para o html e o body, apenas o suficiente para acomodar o necessário.*/
+}
+
+h2 {
+    font-family: 'Raleway'; 
+
+}
+
+.logo {
+    position: absolute;
+    width: 140px;
+    top: 10px;        /*Classe usada na logo, alterando o tamanho e posicionamento*/
+    left: 170px;
+}
+
+#barradenav {
+    list-style: none;
+    padding: 0px;
+}
+
+#barradenav li {
+    display: inline;  /*Classe para alterar o modo que a barra de navegação é exposta, no caso um do lado do outro.*/
+    padding: 80px;
+}
+
+#barradenav li a {
+    font-family: 'Raleway';
+    color: black;
+	text-decoration: none;   
+	font-size: 30px;
+	display: inline-block;  /*Classe usada pra customizar os links que podem ser clicados na barra de navegação, alterando a fonte, tirando a linha embaixo do link, cor, etc.*/
+}
+
+.titulo {
+    font-size: 75px;
+    font-family: "Playfair Display", serif;
+    color: white;
+    text-shadow: -1px 1px 2px #000,   /*O text-shadow é usado pra adicionar essa "outline" no título, colocando uma corzinha a mais, pra não deixar totalmente branca.*/
+		  1px 2px 6px #000,
+		  1px -1px 0 #000,
+		  -1px -1px 0 #000;
+    position: absolute;
+    top: 340px;
+    right: 480px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.cabecalho {
+    background-color: grey;
+    margin: 0;
+    padding: 60px;  /*Padding usado para mudar o tamanho do cabeçalho.*/
+}
+
+.imagemdeumjeitodiferente {
+    background-image: url("https://www.estadao.com.br/resizer/pscBaky392Mx1osGIaxg_j8T3z4=/1292x633/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/estadao/GBXNIRMHTFHHXATMX4YERPHM5Y.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    height: 400px;
+    width: 200.1vh; /*O 'vh' é, nesse caso, usado para ter essa largura, definir ela e, independente das configurações ou do monitor, a imagem não se mexerá.*/
+    
+}
+
+.linhadecima {
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 200vh; /*Essas são as classes do 'hr', pra colocar em uma posição específica e tamanho específico também (tanto essa quanto a classe de baixo).*/
+    top: 177px;
+}
+
+.linhadebaixo {
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 200vh;
+    top: 577px;
+}
+
+.pratododia {
+    position: absolute;
+    left: 780px;
+    top: 630px;
+    font-family: 'Raleway';  /*Classe do texto acima do carrossel de imagens, alterando a posição, tamanho e grossura da fonte*/
+    font-weight: 300;
+    font-size: 50px;
+}
+
+.caixa {    /*Classe da caixa que contém o carrossel*/
+    margin: 20px;   /*Os margin's são usados para definir o tamanho da caixa*/
+    margin-top: 30px;  
+    background-color: white;   
+    padding: 10px;  /*Também usado para definir o tamanho da caixa, porém, por dentro, para dar uma espaçada nas setas, etc*/
+    border-radius: 10px; /*Usado para arredondar as pontas da caixa*/
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /*Usado para adicionar sombras na caixa. Os primeiros valores alteram o jeito que a sombra é colocada (área que ela pega, o quão intensa é a sombra, etc), e o rgba é a cor customizada da sombra*/
+}
+
+.carousel {  /*Classe do conteudo do carrossel (no caso as imagens), alterando a posição e tamanho*/
+    width: 100%;
+    overflow: hidden;
+    position: relative;  
+    padding-top: 250px;
+  }
+
+.carousel-content {  /*Classe para adicionar uma animação mais suave ao trocar as imagens do carrossel*/
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+.carousel-item { /*Classe usada para deixar o tamanho certo de cada imagem em seu tempo correto (tipo, a imagem aparecerá do jeito certo, do tamanho certo, sem estar cortada pela metade ou coisa do tipo, porque o min-width: 100% previne isso)*/
+    min-width: 100%;
+    overflow: hidden;
+  }
+
+.risoto, .salmao, .primavera, .frango, .bife { /*Usado para definir o tamanho "padrão" das imagens do carrossel (para uma não ficar maior que a outra, todas terão a mesma altura ou largua, podendo apenas ser menor que a outra), abrangendo todas as classes*/
+    max-width: 850px;
+    max-height: 480px;
+}
+
+.vai {  /*Classe para alterar o estilo dos botões de próximo e anterior*/
+    position: absolute;
+    right: 20px;
+    top: 400px;
+    background-color: grey;
+    border: none; /*Usado para retirar a borda padrão do <button>*/
+    color: white;
+    padding: 10px 12px; /*Usado para mudar o tamanho do botão*/
+    text-align: center; /*Usado para a seta ficar no meio do botão*/
+    text-decoration: none; 
+    display: inline-block;
+    font-size: 56px;
+    cursor: pointer; /*Usado para aparecer a opção de clicar para o usuário (por algum motivo, quando foi alterado o estilo do botão, ele parou de fazer isso automaticamente)*/
+    opacity: 0.5; /*Usado para deixar um pouco transparente, para não passar por cima das imagens*/
+}
+
+.volta {  /*Mesma coisa do botão de cima, só mudando a posição*/
+    position: absolute;
+    left: 20px;
+    top: 400px;
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 56px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.risoto {  /*Daqui para baixo são as imagens e descrições dos pratos, contendo a posição, tamanho, borda (para as imagens ficarem arredondadas (ou ovais no meu caso)) e grossura da fonte*/
+    position: relative;
+    right: 370px;
+    top: 50px;
+    width: 40%;
+    border-radius: 50%;
+}
+
+.salmao {
+    position: relative;
+    right: 380px;
+    top: 50px;
+    border-radius: 50%;
+    width: 700px;
+}
+
+.frango {
+    position: relative;
+    border-radius: 50%;
+    right: 350px;
+}
+
+.primavera {
+    position: relative;
+    border-radius: 50%;
+    right: 300px;
+}
+
+.bife {
+    position: relative;
+    border-radius: 50%;
+    right: 350px;
+}
+
+.risotocoisas {
+    position: relative;
+    bottom: 380px;
+    left: 400px;
+    font-size: 40px;
+}
+
+.risotocoisas2 {
+    position: relative;
+    bottom: 310px;
+    left: 400px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.salmaocoisas {
+    position: relative;
+    bottom: 350px;
+    left: 400px;
+    font-size: 40px;
+}
+
+.salmaocoisas2 {
+    position: relative;
+    bottom: 280px;
+    left: 380px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.frangocoisas {
+    position: relative;
+    bottom: 404px;
+    left: 390px;
+    font-size: 40px;
+}
+
+.frangocoisas2 {
+    position: relative;
+    bottom: 335px;
+    left: 380px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.primaveracoisas {
+    position: relative;
+    bottom: 450px;
+    left: 390px;
+    font-size: 40px;
+}
+
+.primaveracoisas2 {
+    position: relative;
+    bottom: 382px;
+    left: 410px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.bifecoisas {
+    position: relative;
+    bottom: 450px;
+    left: 390px;
+    font-size: 40px;
+}
+
+.bifecoisas2 {
+    position: relative;
+    bottom: 382px;
+    left: 390px;
+    font-size: 25px;
+    font-weight: 400;
+}
